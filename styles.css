@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Manrope:wght@600;700;800&display=swap');
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#070a12;color:#fff;font-family:'DM Sans',sans-serif}.ad{position:relative;width:100vw;height:100vh;overflow:hidden;background:radial-gradient(circle at 75% 45%,#172443 0,#0b1120 34%,#060810 72%)}.grain{position:absolute;inset:0;opacity:.08;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}.top{position:absolute;z-index:50;left:5vw;top:5vh;display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.16em;font-size:12px}.top img{width:30px;height:30px}.scene{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transform:scale(1.035);transition:opacity .8s ease,transform 1s ease,visibility .8s}.scene.active{opacity:1;visibility:visible;transform:scale(1)}.copy{position:absolute;z-index:15;left:7vw;top:22%;max-width:470px}.copy.center{text-align:center;left:50%;top:14%;transform:translateX(-50%);max-width:800px}.copy.left{left:9vw;top:28%;max-width:390px}.copy small{font-size:11px;font-weight:700;letter-spacing:.2em;color:#5be4d3}.copy h1,.copy h2{font-family:Manrope,sans-serif;font-weight:800;line-height:.98;font-size:clamp(48px,6vw,92px);margin:18px 0}.copy h2{font-size:clamp(42px,5vw,72px)}.copy em{font-style:normal;color:#5be4d3}.copy p{font-size:17px;line-height:1.6;color:#aeb8ca;max-width:600px}.devices{position:absolute;z-index:8;display:flex;align-items:center;justify-content:center}.hero-devices{right:5vw;bottom:4vh;width:52vw;height:88vh;gap:4vw}.duo{bottom:4vh;width:100%;height:63vh;gap:7vw}.final-duo{bottom:0;width:100%;height:78vh;gap:10vw}.phone,.watch{position:relative;overflow:hidden;flex:none;background:transparent;border:0;outline:0;box-shadow:none}.phone iframe,.watch iframe{display:block;width:100%;height:100%;border:0;background:transparent;pointer-events:none}.hero-devices .phone{width:255px;height:510px;transform:rotate(-2deg)}.hero-devices .watch{width:330px;height:430px;transform:rotate(2deg)}.single-phone{position:absolute;right:13vw;bottom:4vh;width:290px;height:580px;z-index:8}.single-watch{position:absolute;right:14vw;bottom:7vh;width:350px;height:455px;z-index:8}.duo .phone{width:260px;height:520px}.duo .watch{width:320px;height:420px}.sync{font-size:12px;letter-spacing:.2em;color:#5be4d3;border:1px solid #5be4d3;border-radius:50px;padding:12px 18px;box-shadow:0 0 35px #5be4d344}.final-duo .phone{width:280px;height:560px}.final-duo .watch{width:350px;height:455px}.end{background:radial-gradient(circle at center,#172844 0,#080b13 55%)}.logo-big{width:82px;height:82px;margin-bottom:15px}.end .copy{position:relative;left:auto;top:auto;transform:none}.end .copy p{letter-spacing:.35em;margin-top:30px}.progress{position:absolute;z-index:60;left:5vw;right:5vw;bottom:4vh;height:2px;background:#ffffff18}.progress i{display:block;height:100%;width:0;background:#5be4d3;transition:width .3s}.controls{position:absolute;z-index:70;right:5vw;bottom:5.5vh;display:flex;gap:8px}.controls button{border:1px solid #ffffff20;background:#ffffff08;color:#fff;width:36px;height:36px;border-radius:50%;cursor:pointer}.scene:nth-child(1) .copy{animation:fadeup 1s both}.scene.active .copy{animation:fadeup .9s both}.scene.active .phone{animation:devicein 1s .15s both}.scene.active .watch{animation:devicein 1s .28s both}@keyframes fadeup{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}@keyframes devicein{from{opacity:0;transform:translateY(45px) scale(.94)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(max-width:1000px){.copy{left:5vw;max-width:390px}.copy h1{font-size:54px}.hero-devices{right:1vw;width:52vw;gap:1vw}.hero-devices .phone{width:190px;height:390px}.hero-devices .watch{width:245px;height:320px}.single-phone{right:7vw;width:230px;height:460px}.single-watch{right:7vw;width:270px;height:350px}.duo{gap:3vw}.duo .phone{width:210px;height:420px}.duo .watch{width:250px;height:330px}.final-duo{gap:5vw}.final-duo .phone{width:220px;height:440px}.final-duo .watch{width:270px;height:350px}}@media(max-width:700px){.copy,.copy.left,.copy.center{left:7vw;right:7vw;top:13%;transform:none;text-align:left;max-width:none}.copy h1,.copy h2{font-size:42px}.copy p{font-size:14px}.hero-devices,.duo,.final-duo{bottom:1vh;width:100%;height:54vh;gap:4vw}.hero-devices .phone,.duo .phone,.final-duo .phone{width:145px;height:290px}.hero-devices .watch,.duo .watch,.final-duo .watch{width:175px;height:230px}.single-phone{right:8vw;bottom:0;width:180px;height:360px}.single-watch{right:7vw;bottom:2vh;width:210px;height:275px}.sync{font-size:9px;padding:8px 10px}.end .copy{text-align:center;left:7vw;right:7vw}.logo-big{width:60px;height:60px}}
+
+
+/* Correcciones de encuadre para el anuncio: dispositivos completos y textos sin solaparse. */
+.scene { overflow: hidden; }
+.phone, .watch { overflow: visible; }
+.phone iframe, .watch iframe { position: relative; z-index: 1; }
+
+/* El iframe debe respetar las dimensiones reales de los dispositivos del prototipo. */
+.hero-devices .phone, .duo .phone, .final-duo .phone,
+.single-phone { width: 270px; height: 525px; }
+.hero-devices .watch, .duo .watch, .final-duo .watch,
+.single-watch { width: 350px; height: 515px; }
+
+/* En pantallas amplias, se reserva el lado izquierdo para el texto y el derecho
+   para los mockups, evitando que los titulares pasen por encima de los dispositivos. */
+@media (min-width: 1001px) {
+  .scene:not(.end) .copy { max-width: min(42vw, 650px); }
+  .scene .copy.center {
+    left: 6.5vw;
+    right: auto;
+    top: 50%;
+    width: 43vw;
+    max-width: 650px;
+    text-align: left;
+    transform: translateY(-50%);
+  }
+  .scene .copy.center h2 { font-size: clamp(38px, 4vw, 66px); }
+  .scene .copy.center p { max-width: 560px; }
+  .scene .copy.left { left: 7vw; top: 50%; width: 34vw; max-width: 500px; transform: translateY(-50%); }
+  .scene .copy:not(.center):not(.left) { left: 7vw; top: 50%; width: 37vw; max-width: 570px; transform: translateY(-50%); }
+  .scene .copy h1 { font-size: clamp(50px, 5vw, 78px); }
+  .scene .copy h2 { font-size: clamp(42px, 4.4vw, 70px); }
+  .scene .copy p { font-size: clamp(15px, 1.15vw, 18px); }
+
+  .hero-devices { right: 4vw; left: auto; bottom: 8vh; width: 49vw; height: 78vh; gap: clamp(12px, 2vw, 34px); }
+  .hero-devices .phone { width: 235px; height: 457px; }
+  .hero-devices .watch { width: 305px; height: 448px; }
+  .single-phone { right: 8vw; bottom: 50%; transform: translateY(50%); width: 270px; height: 525px; }
+  .single-watch { right: 8vw; bottom: 50%; transform: translateY(50%); width: 350px; height: 515px; }
+  .duo { left: 48%; right: 3vw; bottom: 50%; transform: translateY(50%); width: 49vw; height: 68vh; gap: clamp(12px, 1.5vw, 26px); }
+  .duo .phone { width: 220px; height: 428px; }
+  .duo .watch { width: 285px; height: 420px; }
+  .duo .sync { flex-shrink: 0; }
+  .final-duo { left: 43%; right: 2vw; bottom: 50%; transform: translateY(50%); width: 55vw; height: 72vh; gap: clamp(12px, 2vw, 34px); }
+  .final-duo .phone { width: 235px; height: 457px; }
+  .final-duo .watch { width: 305px; height: 448px; }
+  .scene:nth-child(1) .copy { animation: none; }
+  .scene.active .copy { animation: copyfade .75s both; }
+  @keyframes copyfade { from { opacity: 0; } to { opacity: 1; } }
+}
+
+/* Portátiles y tablets: reducir tamaños manteniendo la proporción y el texto legible. */
+@media (min-width: 701px) and (max-width: 1000px) {
+  .scene .copy, .scene .copy.left, .scene .copy.center {
+    left: 5vw; right: auto; top: 13%; width: 42vw; max-width: 420px;
+    text-align: left; transform: none;
+  }
+  .scene .copy h1, .scene .copy h2 { font-size: clamp(34px, 4.5vw, 48px); }
+  .scene .copy p { font-size: 14px; }
+  .hero-devices { right: 2vw; width: 53vw; height: 72vh; gap: 1vw; }
+  .hero-devices .phone, .duo .phone, .final-duo .phone { width: 180px; height: 350px; }
+  .hero-devices .watch, .duo .watch, .final-duo .watch { width: 225px; height: 330px; }
+  .single-phone { right: 5vw; width: 210px; height: 410px; }
+  .single-watch { right: 5vw; width: 235px; height: 345px; }
+  .duo, .final-duo { right: 1vw; width: 56vw; gap: 1vw; }
+}
+
+@media (min-width: 1001px) {
+  .scene.active .single-phone, .scene.active .single-watch { animation: none !important; }
+}
+
+
+/* Segunda corrección: no reducir los marcos externos por debajo del tamaño
+   real del mockup dentro del iframe. Las correas del reloj sobresalen arriba y abajo. */
+@media (min-width: 1001px) {
+  .hero-devices .phone, .duo .phone, .final-duo .phone, .single-phone {
+    width: 270px !important;
+    height: 540px !important;
+    overflow: visible !important;
+  }
+  .hero-devices .watch, .duo .watch, .final-duo .watch, .single-watch {
+    width: 350px !important;
+    height: 550px !important;
+    overflow: visible !important;
+  }
+  .hero-devices { height: 72vh; bottom: 9vh; gap: 1.5vw; }
+  .duo { height: 70vh; }
+  .final-duo { height: 72vh; }
+  .single-phone, .single-watch { bottom: 50%; }
+}
+
+@media (min-width: 701px) and (max-width: 1000px) {
+  .hero-devices .phone, .duo .phone, .final-duo .phone, .single-phone {
+    width: 230px !important; height: 455px !important;
+  }
+  .hero-devices .watch, .duo .watch, .final-duo .watch, .single-watch {
+    width: 285px !important; height: 445px !important;
+  }
+}
+
+
+/* Ajuste final de proporciones y encuadre: los iframes conservan la misma
+   relación de aspecto que los mockups del prototipo, sin recortar el teléfono. */
+@media (min-width: 1001px) {
+  .phone, .hero-devices .phone, .duo .phone, .final-duo .phone, .single-phone {
+    width: 270px !important;
+    height: 525px !important;
+    flex: 0 0 270px;
+    overflow: visible !important;
+  }
+  .watch, .hero-devices .watch, .duo .watch, .final-duo .watch, .single-watch {
+    width: 350px !important;
+    height: 515px !important;
+    flex: 0 0 350px;
+    overflow: visible !important;
+  }
+  .phone iframe, .watch iframe { width: 100%; height: 100%; }
+  .hero-devices { right: 2vw; width: 54vw; height: 78vh; bottom: 8vh; gap: 1vw; }
+  .single-phone { right: 7vw; bottom: 50%; transform: translateY(50%) !important; }
+  .single-watch { right: 7vw; bottom: 50%; transform: translateY(50%) !important; }
+  .duo { left: 47%; right: 2vw; width: 51vw; height: 70vh; bottom: 50%; transform: translateY(50%); gap: 1vw; }
+  .duo .phone { width: 220px !important; height: 428px !important; flex-basis: 220px; }
+  .duo .watch { width: 285px !important; height: 420px !important; flex-basis: 285px; }
+  .final-duo { left: 42%; right: 1vw; width: 57vw; height: 72vh; bottom: 50%; transform: translateY(50%); gap: 1vw; }
+  .final-duo .phone { width: 235px !important; height: 457px !important; flex-basis: 235px; }
+  .final-duo .watch { width: 305px !important; height: 448px !important; flex-basis: 305px; }
+}
+@media (min-width: 701px) and (max-width: 1000px) {
+  .single-phone { right: 3vw; bottom: 5vh; width: 220px !important; height: 428px !important; }
+  .single-watch { right: 3vw; bottom: 5vh; width: 250px !important; height: 368px !important; }
+  .phone iframe, .watch iframe { width: 100%; height: 100%; }
+}
+@media (max-height: 700px) and (min-width: 1001px) {
+  .single-phone { width: 235px !important; height: 457px !important; }
+  .single-watch { width: 305px !important; height: 448px !important; }
+  .hero-devices .phone { width: 210px !important; height: 409px !important; flex-basis: 210px; }
+  .hero-devices .watch { width: 270px !important; height: 397px !important; flex-basis: 270px; }
+}
+/* Evita que las animaciones sustituyan el centrado calculado y muevan los marcos. */
+.scene.active .phone, .scene.active .watch { animation: none !important; }
+
+
+/* Centrar las escenas que muestran únicamente un teléfono. */
+@media (min-width: 1001px) {
+  .scene .single-phone {
+    left: 50% !important;
+    right: auto !important;
+    bottom: 50% !important;
+    transform: translate(-50%, 50%) !important;
+    margin: 0 !important;
+  }
+}
+@media (min-width: 701px) and (max-width: 1000px) {
+  .scene .single-phone {
+    left: 62% !important;
+    right: auto !important;
+    bottom: 3vh !important;
+    transform: translateX(-50%) !important;
+    margin: 0 !important;
+  }
+}
+@media (max-width: 700px) {
+  .scene .single-phone {
+    left: 50% !important;
+    right: auto !important;
+    bottom: 2vh !important;
+    transform: translateX(-50%) !important;
+    margin: 0 !important;
+  }
+}
+
+/* V5 — encuadre definitivo de los mockups.
+   Los iframes reciben unos píxeles extra para que ningún borde/correa sea
+   recortado por el viewport del iframe. Se eliminan las rotaciones que
+   provocaban que las esquinas del teléfono/reloj quedaran fuera del marco. */
+@media (min-width: 1001px) {
+  .phone, .single-phone, .hero-devices .phone, .duo .phone, .final-duo .phone {
+    width: 285px !important;
+    height: 540px !important;
+    flex: 0 0 285px !important;
+    transform: none !important;
+    overflow: visible !important;
+  }
+
+  .watch, .single-watch, .hero-devices .watch, .duo .watch, .final-duo .watch {
+    width: 380px !important;
+    height: 565px !important;
+    flex: 0 0 380px !important;
+    transform: none !important;
+    overflow: visible !important;
+  }
+
+  .phone iframe, .watch iframe {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+  }
+
+  /* Teléfono solo: perfectamente centrado en la zona derecha/central,
+     sin pegarlo a la esquina. */
+  .scene .single-phone {
+    left: 61% !important;
+    right: auto !important;
+    top: 50% !important;
+    bottom: auto !important;
+    transform: translate(-50%, -50%) !important;
+    margin: 0 !important;
+  }
+
+  /* Reloj solo: centrado en la zona derecha para dejar espacio al texto. */
+  .scene .single-watch {
+    left: 68% !important;
+    right: auto !important;
+    top: 50% !important;
+    bottom: auto !important;
+    transform: translate(-50%, -50%) !important;
+    margin: 0 !important;
+  }
+
+  /* Escenas con ambos dispositivos. */
+  .hero-devices {
+    right: 1.5vw !important;
+    width: 55vw !important;
+    height: 78vh !important;
+    bottom: 8vh !important;
+    gap: 1.2vw !important;
+  }
+  .duo {
+    left: 46% !important;
+    right: 1vw !important;
+    width: 53vw !important;
+    height: 72vh !important;
+    bottom: 50% !important;
+    transform: translateY(50%) !important;
+    gap: 1vw !important;
+  }
+  .final-duo {
+    left: 40% !important;
+    right: 0.5vw !important;
+    width: 59vw !important;
+    height: 74vh !important;
+    bottom: 50% !important;
+    transform: translateY(50%) !important;
+    gap: 1.2vw !important;
+  }
+}
+
+@media (min-width: 701px) and (max-width: 1000px) {
+  .phone, .single-phone, .hero-devices .phone, .duo .phone, .final-duo .phone {
+    width: 245px !important;
+    height: 470px !important;
+    flex-basis: 245px !important;
+    transform: none !important;
+  }
+  .watch, .single-watch, .hero-devices .watch, .duo .watch, .final-duo .watch {
+    width: 305px !important;
+    height: 455px !important;
+    flex-basis: 305px !important;
+    transform: none !important;
+  }
+  .scene .single-phone {
+    left: 63% !important;
+    right: auto !important;
+    top: 58% !important;
+    bottom: auto !important;
+    transform: translate(-50%, -50%) !important;
+  }
+  .scene .single-watch {
+    left: 68% !important;
+    right: auto !important;
+    top: 58% !important;
+    bottom: auto !important;
+    transform: translate(-50%, -50%) !important;
+  }
+}
+
+/* =========================================================
+   NUEVAS ESCENAS — SISTEMA VISUAL SMART-UNI
+   Se añaden sin alterar las pantallas/prototipo existentes.
+   ========================================================= */
+.brand-scene{background:radial-gradient(circle at 75% 48%,#152542 0,#0b1120 42%,#070a12 76%)}
+.brand-copy{position:absolute;left:7vw;top:50%;transform:translateY(-50%);z-index:15;width:min(39vw,570px)}
+.brand-copy small{display:block;font-size:11px;font-weight:700;letter-spacing:.2em;color:#5be4d3}
+.brand-copy h2{font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(42px,4.7vw,72px);line-height:.98;margin:18px 0}
+.brand-copy h2 em{font-style:normal;color:#5be4d3}
+.brand-copy p{font-size:clamp(15px,1.15vw,18px);line-height:1.6;color:#aeb8ca;max-width:560px}
+.brand-wordmark{display:flex;align-items:center;margin-top:34px;font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(22px,2vw,32px);letter-spacing:.06em;color:#ecf3ff}
+.brand-wordmark b{color:#5be4d3}
+.logo-showcase{position:absolute;left:63%;top:50%;transform:translate(-50%,-50%);width:min(34vw,500px);height:min(34vw,500px);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:18px;border:1px solid #ffffff18;border-radius:40px;background:linear-gradient(145deg,#111a2c,#0a1020);box-shadow:0 30px 90px #00000055,inset 0 1px #ffffff10}
+.logo-showcase img{width:45%;max-width:210px;filter:drop-shadow(0 0 28px #22dbe855)}
+.logo-showcase span{font-size:10px;letter-spacing:.2em;color:#aab5c9}
+.logo-halo{position:absolute;width:62%;height:62%;border-radius:50%;background:#22dbe80b;box-shadow:0 0 100px #22dbe81c}
+.palette-scene{background:#070a12}
+.palette-board{position:absolute;left:48%;top:50%;transform:translateY(-50%);width:min(48vw,720px);display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-radius:20px;overflow:hidden;box-shadow:0 30px 80px #00000066;border:1px solid #ffffff10}
+.swatch{min-height:180px;padding:22px 16px;display:flex;flex-direction:column;justify-content:flex-end;gap:7px;color:#070a12}
+.swatch span{font-size:11px;letter-spacing:.08em;font-weight:700}.swatch b{font-family:monospace;font-size:12px}.swatch.dark{background:#070a12;color:#ecf3ff}.swatch.panel{background:#111a2c;color:#ecf3ff}.swatch.cream{background:#ecf3ff}.swatch.muted{background:#aab5c9}.swatch.aqua{background:#5be4d3}.swatch.blue{background:#82aaff}.swatch.violet{background:#a48dff}.swatch.coral{background:#ff9aac}
+.type-scene{background:radial-gradient(circle at 24% 52%,#17233d 0,#0b1120 38%,#070a12 72%)}
+.type-board{position:absolute;left:7vw;top:50%;transform:translateY(-50%);width:min(44vw,630px);padding:42px;border-radius:30px;background:#111a2c;border:1px solid #ffffff16;box-shadow:0 35px 100px #00000066}
+.type-title{font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(38px,4vw,60px);letter-spacing:-.04em;color:#ecf3ff;margin-bottom:35px}.type-sample-main{font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(34px,3.3vw,52px);color:#5be4d3}.type-sample-sub{font-family:DM Sans,sans-serif;font-size:clamp(22px,2vw,32px);margin:10px 0 32px;color:#ecf3ff}.type-sample-sub em{font-style:normal;color:#a48dff}.type-meta{display:flex;justify-content:space-between;gap:15px;border-top:1px solid #ffffff15;padding-top:18px;color:#aab5c9;font-size:13px}.type-meta b{color:#ecf3ff}.type-button{margin-top:24px;border-radius:15px;padding:16px 18px;background:linear-gradient(90deg,#5be4d3,#82aaff);color:#070a12;font-weight:800;display:flex;justify-content:space-between}.type-copy{left:57%;width:min(36vw,500px)}.type-rules{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}.type-rules span{border:1px solid #ffffff16;background:#ffffff07;border-radius:99px;padding:8px 11px;color:#aab5c9;font-size:11px}
+.icon-scene{background:#070a12}.icon-board{position:absolute;left:54%;top:50%;transform:translateY(-50%);width:min(39vw,570px);display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding:22px;border-radius:28px;background:#111a2c;border:1px solid #ffffff12;box-shadow:0 35px 100px #00000066}.icon-cell{min-height:125px;border-radius:18px;background:#0b1426;border:1px solid #ffffff10;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px}.icon-cell i{font-style:normal;width:46px;height:46px;border-radius:13px;display:grid;place-items:center;color:#5be4d3;border:1px solid #5be4d344;background:#5be4d30b;font-size:25px;line-height:1}.icon-cell span{font-size:10px;color:#aab5c9}.mini-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:25px}.mini-actions span{font-size:11px;font-weight:700;color:#ecf3ff;background:#111a2c;border:1px solid #ffffff14;padding:10px 12px;border-radius:12px}.system-scene{background:radial-gradient(circle at 70% 48%,#162744 0,#0b1120 40%,#070a12 75%)}
+.system-card{position:absolute;left:69%;top:50%;transform:translate(-50%,-50%);width:min(43vw,650px);padding:28px 32px;border-radius:28px;background:#111a2c;border:1px solid #ffffff15;box-shadow:0 35px 100px #00000066}
+.system-head{display:flex;align-items:center;justify-content:space-between;padding-bottom:18px;border-bottom:1px solid #ffffff12;color:#5be4d3;font-weight:800;letter-spacing:.08em}
+.system-head small{font-size:10px;color:#aab5c9;font-weight:600;letter-spacing:.12em}
+.system-item{display:flex;align-items:center;gap:18px;padding:17px 0;border-bottom:1px solid #ffffff0d}
+.system-item>div:last-child{display:flex;flex-direction:column;gap:5px}
+.system-item b{font-size:12px;color:#ecf3ff;letter-spacing:.04em}
+.system-item span{font-size:14px;color:#aab5c9}
+.system-symbol{flex:0 0 48px;width:48px;height:48px;border-radius:13px;background:#070a12;display:flex;align-items:center;justify-content:center;color:#5be4d3;font-weight:800;font-size:24px;border:1px solid #ffffff12}
+.colors-symbol{gap:4px}.colors-symbol i{display:block;width:9px;height:24px;border-radius:5px;background:#5be4d3}.colors-symbol i:nth-child(2){background:#82aaff}.colors-symbol i:nth-child(3){background:#a48dff}
+.type-symbol{font-size:25px;color:#ecf3ff}.icons-symbol{font-size:19px;letter-spacing:4px}
+.system-foot{padding-top:18px;color:#5be4d3;font-size:13px}
+.system-scene>.system-copy{left:7vw;width:min(34vw,500px)}
+.system-result{margin-top:24px;padding:15px 17px;border-left:3px solid #5be4d3;background:#111a2c;border-radius:0 12px 12px 0;display:flex;flex-direction:column;gap:5px}
+.system-result b{font-size:13px;color:#5be4d3}.system-result span{font-size:14px;line-height:1.5;color:#ecf3ff}
+@media(max-width:1000px){.brand-copy{left:5vw;width:43vw}.logo-showcase{left:70%;width:38vw;height:38vw}.palette-board{left:46%;width:51vw}.swatch{min-height:135px;padding:14px 10px}.swatch span{font-size:8px}.swatch b{font-size:9px}.type-board{left:5vw;width:46vw;padding:28px}.type-copy{left:55%;width:40vw}.icon-board{left:51%;width:46vw;gap:8px;padding:14px}.icon-cell{min-height:95px}.system-card{left:66%;width:49vw;padding:22px}.system-scene>.system-copy{left:5vw;width:40vw}}
+@media(max-width:700px){.brand-copy,.system-scene>.brand-copy{left:7vw;right:7vw;top:13%;width:auto;transform:none}.brand-copy h2{font-size:40px}.brand-copy p{font-size:14px}.brand-wordmark{margin-top:18px}.logo-showcase{left:50%;top:68%;width:68vw;height:42vh;border-radius:25px}.logo-showcase img{width:32%;}.palette-board{left:7vw;right:7vw;top:62%;width:auto;transform:none;grid-template-columns:repeat(4,1fr);border-radius:16px}.swatch{min-height:95px;padding:9px 7px}.swatch span{font-size:6px}.swatch b{font-size:7px}.type-board{left:7vw;right:7vw;top:57%;width:auto;transform:none;padding:22px;border-radius:22px}.type-title{font-size:32px;margin-bottom:18px}.type-sample-main{font-size:28px}.type-sample-sub{font-size:18px;margin-bottom:18px}.type-meta{font-size:10px}.type-button{margin-top:14px;padding:12px}.type-copy{left:7vw;right:7vw;top:10%;width:auto}.type-copy .type-rules{display:none}.icon-board{left:7vw;right:7vw;top:59%;width:auto;transform:none;grid-template-columns:repeat(4,1fr);padding:10px;gap:7px;border-radius:20px}.icon-cell{min-height:78px;border-radius:12px;gap:7px}.icon-cell i{width:34px;height:34px;font-size:19px;border-radius:9px}.icon-cell span{font-size:7px}.mini-actions{display:none}.system-card{left:7vw;right:7vw;top:59%;width:auto;transform:none;padding:18px;border-radius:20px}.system-line{grid-template-columns:1fr 1.3fr 24px;padding:13px 0;gap:8px}.system-line b{font-size:8px}.system-line span{font-size:8px}.system-line i{width:19px;height:19px}.system-foot{font-size:9px;padding-top:14px}.system-scene>.brand-copy{top:10%}}
+
+/* V6 — navegación manual y corrección de las dos pantallas con problemas de composición. */
+.controls{right:5vw;bottom:5.2vh;display:flex;align-items:center;gap:8px}
+.controls button{font-family:'DM Sans',sans-serif;font-size:20px;display:grid;place-items:center;transition:transform .18s ease,background .18s ease,border-color .18s ease}
+.controls button:hover:not(:disabled){transform:translateY(-2px);background:#5be4d318;border-color:#5be4d366}
+.controls button:disabled{opacity:.28;cursor:not-allowed}
+.controls #full{font-size:16px}
+#counter{min-width:58px;text-align:center;color:#aab5c9;font-size:11px;letter-spacing:.08em;margin-right:2px}
+
+/* La tarjeta del sistema queda completamente a la derecha del texto. */
+@media (min-width:1001px){
+  .system-scene>.brand-copy{left:7vw!important;width:min(33vw,500px)!important;max-width:500px!important}
+  .system-card{left:67%!important;width:min(40vw,650px)!important;z-index:10}
+  .end .copy.center{position:absolute!important;left:50%!important;top:50%!important;right:auto!important;width:min(82vw,1050px)!important;max-width:1050px!important;transform:translate(-50%,-50%)!important;text-align:center!important}
+  .end .logo-big{width:86px;height:86px;margin-bottom:22px}
+  .end .copy h1{font-size:clamp(52px,5.2vw,82px);margin:0}
+  .end .copy p{margin-top:26px}
+}
+@media (max-width:1000px){
+  .system-scene>.brand-copy{width:42vw!important}
+  .system-card{left:60%!important;width:43vw!important}
+  .end .copy.center{position:absolute!important;left:50%!important;top:50%!important;right:auto!important;width:84vw!important;transform:translate(-50%,-50%)!important;text-align:center!important}
+}
+@media(max-width:700px){
+  .controls{right:5vw;bottom:6vh}
+  #counter{font-size:9px;min-width:48px}
+  .controls button{width:34px;height:34px}
+  .system-scene>.brand-copy{width:auto!important}
+  .system-card{left:7vw!important;right:7vw!important;width:auto!important;top:59%!important}
+  .end .copy.center{top:48%!important;width:88vw!important}
+  .end .logo-big{width:64px;height:64px;margin-bottom:16px}
+  .end .copy h1{font-size:40px}
+}
+
+@media(max-width:700px){
+.system-scene{overflow:auto}
+.system-scene>.system-copy{left:7vw;right:7vw;top:8%;width:auto;transform:none}
+.system-scene>.system-copy h2{font-size:34px}
+.system-scene>.system-copy p{font-size:13px;max-width:600px}
+.system-result{margin-top:12px;padding:10px 12px}
+.system-result span{font-size:12px}
+.system-card{left:7vw;right:7vw;top:61%;transform:none;width:auto;padding:14px 18px;border-radius:18px}
+.system-head{padding-bottom:10px}
+.system-item{padding:8px 0;gap:12px}
+.system-symbol{flex-basis:34px;width:34px;height:34px;border-radius:9px;font-size:18px}
+.system-item b{font-size:10px}.system-item span{font-size:11px}
+.system-foot{font-size:10px;padding-top:10px}
+}
+
+/* Logotipo oficial Smart-Uni */
+.system-symbol.logo-symbol{overflow:hidden;padding:0!important;}
+.system-symbol.logo-symbol img{width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit;}

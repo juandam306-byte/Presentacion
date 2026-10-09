@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b1020" />
+    <meta
+      name="description"
+      content="Prototipo funcional de SmartUni para consultar información académica desde un smartwatch."
+    />
+    <title>Smart-Uni · Tu campus en la muñeca</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script>const __pitchParams=new URLSearchParams(location.search);const __pitchMode=__pitchParams.get("pitch");if(__pitchMode)document.documentElement.dataset.pitchMode=__pitchMode;document.addEventListener("DOMContentLoaded",()=>{const r=__pitchParams.get("route");if(r)window.__pitchInitialRoute=r;});</script>
+  </head>
+  <body>
+    <main class="experience">
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow"><img class="eyebrow-logo" src="smartuni-logo.jpeg" alt="" /> SMART-UNI · PROTOTIPO</p>
+        <h1 id="page-title">Tu jornada universitaria, a un vistazo.</h1>
+        <p class="lede">
+          Consulta tu próxima clase, revisa el horario y recibe avisos importantes sin sacar el celular.
+        </p>
+
+        <div class="feature-list" aria-label="Funciones incluidas">
+          <article>
+            <span class="feature-icon" aria-hidden="true">01</span>
+            <div><strong>Próxima clase</strong><small>Hora, aula y tiempo restante.</small></div>
+          </article>
+          <article>
+            <span class="feature-icon" aria-hidden="true">02</span>
+            <div><strong>Horario al día</strong><small>Selecciona cualquier clase para ver su detalle.</small></div>
+          </article>
+          <article>
+            <span class="feature-icon" aria-hidden="true">03</span>
+            <div><strong>Alertas útiles</strong><small>Los avisos relevantes siempre a mano.</small></div>
+          </article>
+        </div>
+
+        <p class="hint">Configura el reloj desde el teléfono y observa los cambios al instante.</p>
+      </section>
+
+      <section class="device-area" aria-label="SmartUni en teléfono y smartwatch">
+        <aside class="phone-area" aria-label="Aplicación móvil para configurar SmartUni en el reloj">
+          <div class="phone-shadow"></div>
+          <div class="phone-case">
+            <div class="phone-camera" aria-hidden="true"></div>
+            <div class="phone-screen">
+              <div class="phone-status"><time id="phone-clock">09:18</time><span aria-hidden="true">▮ ◖ ◉</span></div>
+              <header class="phone-header"><strong><img class="phone-logo" src="smartuni-logo.jpeg" alt="" /> Smart-Uni</strong><small><i></i> CONECTADO</small></header>
+              <div class="phone-content">
+                <p class="phone-kicker">DISPOSITIVO VINCULADO</p>
+                <article class="connected-card">
+                  <span class="mini-watch" aria-hidden="true">⌚</span>
+                  <span><strong>SmartUni Watch</strong><small id="phone-sync-status">Sincronizado ahora</small></span>
+                  <b>86%</b>
+                </article>
+
+                <div class="phone-section-heading"><h2>Configuración</h2><span id="phone-current-screen">Inicio</span></div>
+                <div class="phone-controls">
+                  <label class="phone-toggle"><span><strong>Alertas de clase</strong><small id="phone-alert-setting">Avisos en el reloj</small></span><input type="checkbox" id="phone-notifications" checked /><i aria-hidden="true"></i></label>
+                  <label class="phone-toggle"><span><strong>Modo concentración</strong><small>Reduce distracciones</small></span><input type="checkbox" id="phone-focus-mode" /><i aria-hidden="true"></i></label>
+                </div>
+
+                <div class="phone-section-heading compact"><h2>Pantalla inicial</h2><span>Elige una vista</span></div>
+                <div class="default-view-picker">
+                  <button class="default-view active" data-default-view="home">Inicio</button>
+                  <button class="default-view" data-default-view="schedule">Horario</button>
+                </div>
+
+                <div class="phone-section-heading compact"><h2>Color del reloj</h2><span>Personaliza</span></div>
+                <div class="theme-picker" aria-label="Elegir tema visual">
+                  <button class="theme-option active" data-theme="aqua" aria-label="Tema aqua"><i></i></button>
+                  <button class="theme-option" data-theme="violet" aria-label="Tema violeta"><i></i></button>
+                  <button class="theme-option" data-theme="coral" aria-label="Tema coral"><i></i></button>
+                </div>
+                <button class="phone-class-manager" id="manage-classes"><span aria-hidden="true">▦</span><span><strong>Gestionar clases</strong><small id="course-count">3 clases en horario</small></span><b aria-hidden="true">›</b></button>
+                <button class="phone-sync-button" id="sync-watch"><span aria-hidden="true">⌁</span> Sincronizar reloj</button>
+              </div>
+              <nav class="phone-nav" aria-label="Navegación móvil"><span aria-hidden="true">⌂</span><span class="active" aria-hidden="true">⌚</span><span aria-hidden="true">◌</span><span aria-hidden="true">▣</span></nav>
+
+              <section class="phone-manager" id="phone-manager" aria-labelledby="manager-title" hidden>
+                <header class="manager-header">
+                  <button class="manager-back" id="close-class-manager" aria-label="Cerrar gestión de clases">‹</button>
+                  <div><p>MI HORARIO</p><h2 id="manager-title">Gestionar clases</h2></div>
+                  <button class="manager-add" id="add-class" aria-label="Agregar nueva clase">+</button>
+                </header>
+
+                <div class="manager-list-view" id="manager-list-view">
+                  <p class="manager-help">Edita tus clases o agrega una nueva al horario.</p>
+                  <div class="manager-course-list" id="manager-course-list"></div>
+                </div>
+
+                <form class="class-editor" id="class-editor" hidden>
+                  <div class="editor-heading"><p id="editor-mode">NUEVA CLASE</p><h3 id="editor-title">Agregar clase</h3></div>
+                  <label>Nombre de la materia<input id="class-name" name="name" type="text" maxlength="48" placeholder="Ej. Matemáticas" required /></label>
+                  <div class="editor-grid"><label>Código<input id="class-code" name="code" type="text" maxlength="12" placeholder="MAT-101" required /></label><label>Aula<input id="class-room" name="room" type="text" maxlength="20" placeholder="Aula A-101" required /></label></div>
+                  <div class="editor-grid"><label>Inicia<input id="class-time" name="time" type="time" required /></label><label>Termina<input id="class-end" name="end" type="time" required /></label></div>
+                  <p class="editor-error" id="editor-error" role="alert"></p>
+                  <div class="editor-actions"><button type="button" class="editor-cancel" id="cancel-class-edit">Cancelar</button><button type="submit" class="editor-save">Guardar</button></div>
+                </form>
+              </section>
+            </div>
+          </div>
+        </aside>
+
+        <div class="sync-bridge" aria-label="Teléfono y reloj sincronizados"><span aria-hidden="true">⌁</span><small>SYNC</small></div>
+        <div class="watch-area">
+          <div class="watch-shadow"></div>
+          <div class="watch-case">
+          <div class="watch-crown" aria-hidden="true"></div>
+          <div class="watch-screen">
+            <div class="screen-status" aria-label="Estado del dispositivo">
+              <time id="clock">09:18</time>
+              <span class="status-icons" aria-hidden="true">⌁ ◖</span>
+            </div>
+
+            <section class="view active" id="home" data-view aria-labelledby="home-title">
+              <div class="app-title-row">
+                <div class="brand-mark" aria-hidden="true"><img src="smartuni-logo.jpeg" alt="" /></div>
+                <div>
+                  <p class="screen-kicker">BUEN DÍA, DANIELA</p>
+                  <h2 id="home-title">Smart-Uni</h2>
+                </div>
+                <button class="icon-button" data-route="menu" aria-label="Abrir menú">☰</button>
+              </div>
+
+              <div class="next-class-card">
+                <div class="card-label"><span class="live-dot"></span> PRÓXIMA CLASE</div>
+                <p class="course-name" id="home-course">Diseño de Sistemas Multimedia</p>
+                <div class="class-meta">
+                  <span id="home-time">10:00</span>
+                  <span aria-hidden="true">•</span>
+                  <span id="home-room">Aula B-204</span>
+                </div>
+                <div class="remaining-time"><strong id="home-remaining">42 min</strong><span id="home-remaining-label">para comenzar</span></div>
+                <button class="primary-button" id="go-detail">Ver detalle <span aria-hidden="true">→</span></button>
+              </div>
+
+              <button class="outline-row" data-route="schedule">
+                <span class="row-icon" aria-hidden="true">▦</span>
+                <span><strong>Mi horario</strong><small>3 clases para hoy</small></span>
+                <span aria-hidden="true">›</span>
+              </button>
+              <p class="home-note"><span aria-hidden="true">●</span><span id="home-note-text">Todo listo para tu jornada</span></p>
+            </section>
+
+            <section class="view" id="schedule" data-view aria-labelledby="schedule-title" hidden>
+              <div class="subheader">
+                <button class="icon-button back" data-route="home" aria-label="Volver al inicio">‹</button>
+                <div><p class="screen-kicker">VIERNES · 18 SEP</p><h2 id="schedule-title">Mi horario</h2></div>
+                <button class="icon-button" data-route="menu" aria-label="Abrir menú">☰</button>
+              </div>
+
+              <div class="schedule-list" id="schedule-list" aria-label="Clases de hoy"></div>
+              <p class="schedule-caption">Toca una clase para consultar su información.</p>
+            </section>
+
+            <section class="view" id="detail" data-view aria-labelledby="detail-title" hidden>
+              <div class="subheader">
+                <button class="icon-button back" data-route="schedule" aria-label="Volver al horario">‹</button>
+                <div><p class="screen-kicker">DETALLE DE CLASE</p><h2 id="detail-title">Tu próxima clase</h2></div>
+                <button class="icon-button" data-route="menu" aria-label="Abrir menú">☰</button>
+              </div>
+
+              <article class="detail-card">
+                <span class="subject-tag" id="detail-code">DSM-302</span>
+                <h3 id="detail-course">Diseño de Sistemas Multimedia</h3>
+                <dl class="detail-list">
+                  <div><dt>Hora</dt><dd id="detail-time">10:00 – 11:30</dd></div>
+                  <div><dt>Aula</dt><dd id="detail-room">B-204</dd></div>
+                  <div><dt>Falta</dt><dd id="detail-remaining">42 minutos</dd></div>
+                </dl>
+                <button class="primary-button" id="confirm-class">Confirmar consulta <span aria-hidden="true">✓</span></button>
+              </article>
+              <p class="detail-note" id="confirmation-note">Confirma cuando hayas revisado la información.</p>
+            </section>
+
+            <section class="view" id="id" data-view aria-labelledby="id-title" hidden>
+              <div class="subheader">
+                <button class="icon-button back" data-route="home" aria-label="Volver al inicio">‹</button>
+                <div><p class="screen-kicker">MI PERFIL</p><h2 id="id-title">Identificación</h2></div>
+                <button class="icon-button" data-route="menu" aria-label="Abrir menú">☰</button>
+              </div>
+
+              <article class="id-card">
+                <div class="id-top"><span>SMART-UNI</span><span>ESTUDIANTE</span></div>
+                <div class="profile-row"><div class="avatar" aria-hidden="true">DM</div><div><h3>Daniela Moreno</h3><p>Diseño Multimedia</p></div></div>
+                <div class="id-bottom"><div><small>CÓDIGO</small><strong>202410874</strong></div><div class="qr" aria-label="Código de identificación visual"></div></div>
+              </article>
+              <p class="id-note">Presenta esta tarjeta para identificarte en el campus.</p>
+            </section>
+
+            <section class="view" id="alerts" data-view aria-labelledby="alerts-title" hidden>
+              <div class="subheader">
+                <button class="icon-button back" data-route="home" aria-label="Volver al inicio">‹</button>
+                <div><p class="screen-kicker">JORNADA ACADÉMICA</p><h2 id="alerts-title">Alertas</h2></div>
+                <button class="icon-button" data-route="menu" aria-label="Abrir menú">☰</button>
+              </div>
+
+              <div class="alert-list" id="alert-list" aria-live="polite"></div>
+              <p class="schedule-caption">Toca un aviso para marcarlo como leído.</p>
+            </section>
+
+            <section class="view" id="menu" data-view aria-labelledby="menu-title" hidden>
+              <div class="subheader menu-header">
+                <button class="icon-button back" data-route="home" aria-label="Cerrar menú">‹</button>
+                <div><p class="screen-kicker">SMART-UNI</p><h2 id="menu-title">Menú</h2></div>
+                <span class="header-spacer" aria-hidden="true"></span>
+              </div>
+              <nav class="menu-list" aria-label="Navegación principal">
+                <button data-route="home"><span aria-hidden="true">⌂</span><strong>Inicio</strong><i>›</i></button>
+                <button data-route="schedule"><span aria-hidden="true">▦</span><strong>Mi horario</strong><i>›</i></button>
+                <button data-route="id"><span aria-hidden="true">▣</span><strong>Identificación</strong><i>›</i></button>
+                <button data-route="alerts"><span aria-hidden="true">◌</span><strong>Alertas <em id="alert-badge">2</em></strong><i>›</i></button>
+              </nav>
+              <p class="version">Smart-Uni · v1.0</p>
+            </section>
+
+            <div class="toast" id="toast" role="status" aria-live="polite"></div>
+          </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
